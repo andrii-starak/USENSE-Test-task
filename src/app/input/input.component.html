@@ -6,7 +6,7 @@
                 (input)="onUpdatePassword($event)">
         </label>
     </fieldset>
-    <button type="button" (click)="resetPas()">Reset</button>
+    <button type="button" [disabled]="currentPas===''" (click)="resetPas()">Reset</button>
     <div class="message-container">
         <p class="message" *ngIf="passwordDifficulty==='empty'">{{messageEmpty}}</p>
         <p class="message" *ngIf="passwordDifficulty==='short'">{{messageShort}}</p>
