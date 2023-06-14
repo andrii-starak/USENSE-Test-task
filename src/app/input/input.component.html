@@ -1,0 +1,35 @@
+<form>
+    <fieldset>
+        <legend>Test your password</legend>
+        <label class="label-pas">Password
+            <input action="#" name="Test your password" type="password" class="input-pas" [(ngModel)]="currentPas"
+                (input)="onUpdatePassword($event)">
+        </label>
+    </fieldset>
+    <button type="button" (click)="resetPas()">Reset</button>
+    <div class="message-container">
+        <p class="message" *ngIf="passwordDifficulty==='empty'">{{messageEmpty}}</p>
+        <p class="message" *ngIf="passwordDifficulty==='short'">{{messageShort}}</p>
+        <p class="message" *ngIf="passwordDifficulty==='easy'">{{messageEasy}}</p>
+        <p class="message" *ngIf="passwordDifficulty==='medium'">{{messageMedium}}</p>
+        <p class="message" *ngIf="passwordDifficulty==='hard'">{{messageHard}}</p>
+    </div>
+</form>
+<!-- sections with color -->
+<div class="pas-difficulty">
+    <div class="section-color" [ngClass]="{easy: passwordDifficulty==='easy', 
+        medium: passwordDifficulty==='medium',
+        hard: passwordDifficulty==='hard', 
+        short: passwordDifficulty==='short',
+        empty: passwordDifficulty==='empty' }">
+    </div>
+    <div class="section-color" [ngClass]="{medium: passwordDifficulty==='medium',
+        hard: passwordDifficulty==='hard',
+        short: passwordDifficulty==='short', 
+        empty: passwordDifficulty==='empty'}">
+    </div>
+    <div class="section-color" [ngClass]="{hard: passwordDifficulty==='hard',
+    short: passwordDifficulty==='short', 
+    empty: passwordDifficulty==='empty'}">
+    </div>
+</div>
