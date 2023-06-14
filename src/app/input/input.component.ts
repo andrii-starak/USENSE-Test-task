@@ -28,7 +28,6 @@ export class InputComponent {
         const symb = /[!@#$%^&*()]/;
 
         this.currentPas = ( < HTMLInputElement > event.target).value;
-         console.log(( < HTMLInputElement > event.target).value)
 
         if (this.currentPas.length >= 1 && this.currentPas.length < 8) {
             return this.passwordDifficulty = 'short'
